@@ -1,0 +1,320 @@
+/* Tipografías */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #800000; /* rojo oscuro */
+    background-color: #fff0f6; /* rosa muy clarito */
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #cc0033; /* rojo fuerte para títulos */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff; /* blanco puro */
+    border-bottom: 1px solid #ffb6c1; /* rosa suave */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #cc0033; /* rojo fuerte */
+    /* Asegúrate de que este .logo sea el principal del header,
+       y si hay otra definición de .logo más abajo, combínala o elimínala. */
+}
+
+/* Ajuste del .logo de la animación, para evitar duplicidad de estilos si no es intencional */
+.logo {
+    position: relative; /* Mantener la posición relativa para el moño */
+    /* Las propiedades font-size, font-family, color de aquí
+       deben ser las definitivas para el logo, puedes ajustar la de arriba si quieres */
+    font-size: 2rem; /* Este tamaño era más grande que el de arriba, quizás por eso no se aplica bien */
+    font-family: 'Playfair Display', serif;
+    color: #d9044a; /* Un rojo diferente, considera unificar los colores */
+}
+
+
+.logo .moño {
+    position: absolute;
+    top: -10px;
+    right: -25px;
+    width: 40px;
+    height: auto;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #800000; /* rojo oscuro */
+    font-weight: 500;
+}
+
+.nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #cc0033; /* rojo fuerte */
+    padding-bottom: 3px;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: #ffe6f0; /* rosa pastel */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #cc0033; /* rojo fuerte */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #800000; /* rojo oscuro */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #cc0033; /* rojo fuerte */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #800000; /* rojo oscuro */
+}
+
+/* Productos */
+.productos {
+    padding: 60px 40px;
+    background-color: #fff; /* blanco puro */
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.producto img {
+    width: 70%;
+    border-radius: 10px;
+    border: 2px solid #cc0033; /* borde rojo fuerte */
+    /* Añadir reglas importantes para imágenes responsivas */
+    max-width: 100%; /* Asegura que la imagen nunca exceda el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.producto h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #cc0033; /* rojo fuerte */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe6f0; /* rosa pastel */
+    font-size: 0.9rem;
+    color: #800000; /* rojo oscuro */
+}
+
+/* Sección Colección y Nosotros */
+.coleccion, .nosotros, .contacto {
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    color: #800000; /* rojo oscuro */
+}
+
+.nosotros img {
+    max-width: 20%; /* Originalmente muy pequeño */
+    height: auto; /* Cambiado a auto para mantener la proporción */
+    margin-top: 30px;
+    border-radius: 12px;
+    border: 3px solid #cc0033; /* rojo fuerte */
+}
+
+/* Formulario de contacto */
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-contacto label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #cc0033; /* rojo fuerte */
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    padding: 10px;
+    border: 1px solid #cc0033; /* rojo fuerte */
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.form-contacto button {
+    background-color: #cc0033; /* rojo fuerte */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-contacto button:hover {
+    background-color: #800000; /* rojo oscuro */
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVE DESIGN --- */
+
+/* Ajustes para pantallas más pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Apila el logo y la nav */
+        padding: 15px 20px; /* Reduce el padding */
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 15px; /* Espacio entre logo y nav */
+        font-size: 1.5rem; /* Reduce el tamaño del logo */
+    }
+
+    /* Asegúrate que el moño del logo se ajuste */
+    .logo .moño {
+        width: 30px; /* Más pequeño para móvil */
+        top: -5px; /* Ajusta la posición */
+        right: -15px; /* Ajusta la posición */
+    }
+
+    .nav ul {
+        flex-direction: column; /* Apila los enlaces del menú */
+        gap: 10px; /* Reduce el espacio entre enlaces */
+        padding: 0; /* Elimina padding por defecto de ul */
+        align-items: center; /* Centra los enlaces */
+    }
+
+    .hero {
+        padding: 60px 15px; /* Reduce el padding */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Reduce el tamaño del título principal */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reduce el tamaño del párrafo */
+    }
+
+    .productos,
+    .coleccion,
+    .nosotros,
+    .contacto {
+        padding: 40px 15px; /* Reduce el padding horizontal */
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Una sola columna para productos en móvil */
+        gap: 20px; /* Reduce el espacio entre productos */
+    }
+
+    /* Ajusta el tamaño de la imagen del producto en móvil */
+    .producto img {
+        width: 80%; /* Ajusta el tamaño de la imagen para que no sea muy pequeña ni muy grande */
+        max-width: 250px; /* Opcional: para que las imágenes no sean enormes en pantallas grandes en esta media query */
+    }
+    
+    .nosotros img {
+        max-width: 50%; /* Haz la imagen de nosotros más grande en móvil */
+        /* height: auto ya definido arriba, lo mantiene */
+    }
+
+    /* Ajustes para el formulario de contacto */
+    .form-contacto {
+        max-width: 100%; /* Permite que ocupe todo el ancho disponible */
+        padding: 0 10px; /* Pequeño padding interno */
+    }
+}
+
+/* Ajustes Específicos para Teléfonos Muy Pequeños (ej. 480px o menos) */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .logo .moño {
+        width: 25px; /* Aún más pequeño en pantallas muy pequeñas */
+        right: -10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .productos h2,
+    .coleccion h2,
+    .nosotros h2,
+    .contacto h2 {
+        font-size: 1.8rem; /* Ajusta el tamaño de los títulos de sección */
+    }
+
+    /* Asegúrate de que todas las imágenes sean responsivas */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block; /* Para centrar fácilmente si es necesario */
+        margin: 0 auto; /* Para centrar si son más pequeñas que el 100% */
+    }
+}
